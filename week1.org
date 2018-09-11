@@ -1,2 +1,41 @@
 ** Gradient Descent
 + 梯度下降 不仅仅线性回归 
+min J(theta_0, \theta_1)
+
++ start with some \theta 
++ keep chaning \theta ti reduce j until we hopefully end up at a minimum
++ 起始点略有不同，会导致结果差别很大
+其实是在更新参数
+\alpha : learning rate 学習率
++ simultaneous update all the parameter
+每步更新时，同时更新所有的参数
+- temp0 := blablabla
+- temp1 := blablabla
+...
+- parameter updating
+
+如果按照每一个参数逐次更新的话，微分项的值发生了改变
+谈到梯度下降 --> 意味着同步更新
+非同步更新有可能是代码正常运作，但不同于上述的梯度下降算法。
+** Gradient Descent Intuition
+repeat until convergence{
+theta[j] == theta[j ] - alpha * df(J, theta)  #(simultaneously update)# 
+}
+
+If alpha is too large , gradient descent can overshoot the minmun. 
+It may fail to converge ,or even diverge.
+
+如果theta 正好在最低点，那么梯度下降法对其没有影响。不会进行更新。
+
++ Gradient descent can converge to a local minimum, 
+even with the learning rate alpha fixed
+
++ As we approach a local minimum, 
+gradient descent will automatically take smaller steps.
+So no need to decrease \alpha over time
+
+** Gradient Descent For Linerar Regresion
+
+"Batch" Gradient Descent
+线性回归中的梯度下降法总是会收敛到全局最优解，
+因为不存在全局最优之外的局部最优点
