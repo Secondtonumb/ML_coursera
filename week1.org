@@ -39,3 +39,26 @@ So no need to decrease \alpha over time
 "Batch" Gradient Descent
 线性回归中的梯度下降法总是会收敛到全局最优解，
 因为不存在全局最优之外的局部最优点
+** Matrix and Vectors
++ Matrix: Rectangular array of numbers
++ Vector: An n * 1 matrix
+1-indexed vs 0-indexed
+** Addition ans Scalar Multiplication
+** Matrix Vector Multiplication
+(m * n) * (n * 1) = (m * 1)
+
++ 运算技巧
+prediction = DataMatrix * Parameters
+(m * n) * (n * o) = (m * o)
+
+** Matrix Multiplication Properties
+
++ Not Commutative 不满足交换率
++ Not Associative 不满足结合率
+
+A*I =  I*A = A
+
+** Inverse and Transpose
++ 逆矩阵不存在的矩阵-->奇异阵
+singular degenerate
+ 
