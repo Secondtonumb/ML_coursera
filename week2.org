@@ -1,0 +1,36 @@
+* Multivariate Linear Regression
+** Multiple features
+适用于更多变量，或更多特征量。
++ n = numbers of features
++ x^{(i)} = input(features) of training example
++ x_{j}*{(i)} = value of feature j in i^{th} training example
+
+Hypothesis 假说
+h(x) = \theta^{T}x
+** Gradient Descent for multiple Variables
++ Gradient Descent 
+   Previously(n = 1)
+** Gradient Descent in Practice I - Feature Scaling
+特征缩放
++ 如果两个特征量的尺度差距很大，代价函数的在小尺度次元上的受到的影响会很大，梯度下降的时候会在大尺度次元上来回震荡，会导致收敛很慢。
+(contour maybe a very long oval)
++ *特征缩放* 将两个次元缩放到同一个尺度
+i.e. : 0 <= x_1 <= 1, 0 <=x_2 <= 1
++ 一般来说喜欢取[-1, 1]
++ 尺度过大则缩小，尺度过小则放大，目的是保证尺度尽量一致。尽量在同一数量级。
+*Mean normalization* 正则化
++ Replace x_1 with x_i - \mul_1 to make features have approximately zero mean
+** Gradient Descent in Practice II - Learning Rate
+学习率
++ Makingsure gradient descent is working correctly 
+Value of cost function after each iteration of gradient decent, J(theta)should decrease after every iteration
+/flatten out/ 变平
++ convergence test:
+Declare convergence if J(thata) decrease by less than 10^{-3} in one iteration
++ 当J 不断增大的时候 一般认为我们需要一个更小的学习率
+/overshooting the minimum/
+/minuscult baby step/
+** Features and Polynomial Regression
++ 可以自行创造某种特征
+譬如房子的长度和宽度的乘积(面积) --> 削减特征量
++ 多项式回归(Polynomial regression)
