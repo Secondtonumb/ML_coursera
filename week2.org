@@ -34,3 +34,18 @@ Declare convergence if J(thata) decrease by less than 10^{-3} in one iteration
 + 可以自行创造某种特征
 譬如房子的长度和宽度的乘积(面积) --> 削减特征量
 + 多项式回归(Polynomial regression)
+* Computing Parameters Analytically
+** Normal Equation 正规方程法
+X = m * (n + 1) 1 --> x_0
+\thata = (x^TX)^{-1}x^『T}y
+X /设计矩阵 design matrix/
++ 不需要进行特征归一化
+| Gradient Descent                | Normal Equation                      |
+|---------------------------------+--------------------------------------|
+| Need to chose \alpha            | No need to choose alpha              |
+| Needs Many iterations           | Don't need to iterate                |
+|---------------------------------+--------------------------------------|
+| Works well even when n is large | Need to compute (X^{T}X)^{-1} -->    |
+|                                 | SLOW if n i very large (x <=10000)   |
++ 对复杂的机器学习算法是没办法用正规方程法的
+
