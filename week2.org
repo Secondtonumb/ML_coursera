@@ -37,7 +37,7 @@ Declare convergence if J(\theta) decrease by less than 10^{-3} in one iteration
 * Computing Parameters Analytically
 ** Normal Equation 正规方程法
 X = m * (n + 1) 1 --> x_{0}
-\theta = (\textbf{X}^{T}\textbf{X})^{-1}\textbf{X}^{T}\textbf{y}
+\theta = (X^{T}X)^{-1}X^{T}y
 X /设计矩阵 design matrix/
 + 不需要进行特征归一化
 | Gradient Descent                | Normal Equation                      |
