@@ -15,18 +15,18 @@ h(x) = \theta^{T}x
 + 如果两个特征量的尺度差距很大，代价函数的在小尺度次元上的受到的影响会很大，梯度下降的时候会在大尺度次元上来回震荡，会导致收敛很慢。
 (contour maybe a very long oval)
 + *特征缩放* 将两个次元缩放到同一个尺度
-i.e. : 0 <= x_1 <= 1, 0 <=x_2 <= 1
+i.e. : 0 <= x_{1} <= 1, 0 <=x_{2} <= 1
 + 一般来说喜欢取[-1, 1]
 + 尺度过大则缩小，尺度过小则放大，目的是保证尺度尽量一致。尽量在同一数量级。
 *Mean normalization* 正则化
-+ Replace x_1 with x_i - \mul_1 to make features have approximately zero mean
++ Replace x_{1} with x_{i} - \mu_{1} to make features have approximately zero mean
 ** Gradient Descent in Practice II - Learning Rate
 学习率
 + Makingsure gradient descent is working correctly 
-Value of cost function after each iteration of gradient decent, J(theta)should decrease after every iteration
+Value of cost function after each iteration of gradient decent, J(\theta)should decrease after every iteration
 /flatten out/ 变平
 + convergence test:
-Declare convergence if J(thata) decrease by less than 10^{-3} in one iteration
+Declare convergence if J(\theta) decrease by less than 10^{-3} in one iteration
 + 当J 不断增大的时候 一般认为我们需要一个更小的学习率
 /overshooting the minimum/
 /minuscult baby step/
@@ -36,8 +36,8 @@ Declare convergence if J(thata) decrease by less than 10^{-3} in one iteration
 + 多项式回归(Polynomial regression)
 * Computing Parameters Analytically
 ** Normal Equation 正规方程法
-X = m * (n + 1) 1 --> x_0
-\thata = (x^TX)^{-1}x^『T}y
+X = m * (n + 1) 1 --> x_{0}
+\theta = (x^{T}X)^{-1}x^{T}y
 X /设计矩阵 design matrix/
 + 不需要进行特征归一化
 | Gradient Descent                | Normal Equation                      |
