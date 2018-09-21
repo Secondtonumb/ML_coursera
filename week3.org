@@ -6,3 +6,25 @@
 + threshold classifier output
 一般不用线性回归处理分类问题
 + Logistic Regression 可以将输出控制在一个合理的范围之内
+** Hypotheisi Representation
++ 希望预测值在某给范围之间
+Sigmoid function \approx Logistic function
++ interpretation of Hypothesis output
+h_{\theta}(x) = estimated probability that y = 1 on input x
+y = 1 的概率的估计值
+h_{\theta} = P(y = 1 | x; \theta)
+"probability that y = 1, given x, parameterized by \theta"
+** Decision Boundary(决策边界)
+理解建设函数到底在做什么
+h_{\theta}(x) = g(\theta^{T}x) = P(y = 1 | x; \theta) 
+g(z) = 1 / (1 + e^{-z})
+
++ when z >= 0 g(z) <= 0.5
+  h_{\theta}(x) = g(\theta^{T}x) >= 0.5 
+  \theta^{T}x >= 0
+
++ Non-liner decision boundaries
++ *决策边界不是训练集的属性，而是假设本身及其参数的属性*
+  不是用训练集来决定决策边界，而是用训练集来拟合参数\theta 
+  /polynomial terms/高阶项
+
