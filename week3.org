@@ -1,0 +1,8 @@
+* Classification and Representation
+** Classification
++ Email; Spam / Not Spam
++ Online Transcations: Fraudulent or not
++ Tumor: Malignant / Benign
++ threshold classifier output
+一般不用线性回归处理分类问题
++ Logistic Regression 可以将输出控制在一个合理的范围之内
