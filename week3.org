@@ -27,4 +27,7 @@ g(z) = 1 / (1 + e^{-z})
 + *决策边界不是训练集的属性，而是假设本身及其参数的属性*
   不是用训练集来决定决策边界，而是用训练集来拟合参数\theta 
   /polynomial terms/高阶项
-
+* Logistic Regression Model
+/non-convex/ 非凸函数
+convex 凸函数 可以通过梯度下降法来找到全局最小值
+/penalize/ 惩罚
