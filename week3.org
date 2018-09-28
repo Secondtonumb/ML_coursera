@@ -88,3 +88,14 @@ small values for parameters \theta_{0}, \theta_{1},...\theta_{n}
 + regularization parameter 
 + \lambda 
 
+** Regularized Linear Regression
+一般不惩罚\theta_{0}
+
+(1 - \alpha \lambda / m) < 1 永远比1小一点点
+\theta_{j} 不断被惩罚。。
++ Non- invertibility 
+\theta = (X^{T}X)^{-1}X^{T}y
+
+只要正则参数\lambda > 0 系数矩阵就不会为是退化阵
+** Regularized Logistic Regression
+
