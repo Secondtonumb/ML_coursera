@@ -76,14 +76,14 @@ Overfitting: If we have too many features , the learned hypothesis may fit the t
 ** Cost function
 minimize 无关项的系数\theta
 
-\min_{\theta} 1/2m \Sum_{i = 1}^{m}(h_{\theta}(x^{(i)} - y^(i)))^{2}
+\min_{\theta} 1/2m \sum_{i = 1}^{m}(h_{\theta}(x^{(i)} - y^(i)))^{2}
 + 惩罚较大的\theta
 *** Regularization
 small values for parameters \theta_{0}, \theta_{1},...\theta_{n}
   + "Simpler" hypothesis
   + Less prone to overfitting /smooth/
 + Modify Cost function
-  J(\theta) = 1/ (2m) [\Sum_{i = 1}^{m}(h_{\theta}(x^{(i)}-y^{(i)}))^{2} + \lambda \Sum_{i = 1}^{n}\theta_{j}^{2}]
+  J(\theta) = 1/ (2m) [\sum_{i = 1}^{m}(h_{\theta}(x^{(i)}-y^{(i)}))^{2} + \lambda \Sum_{i = 1}^{n}\theta_{j}^{2}]
 
 + regularization parameter 
 + \lambda 
