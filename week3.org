@@ -31,3 +31,60 @@ g(z) = 1 / (1 + e^{-z})
 /non-convex/ 非凸函数
 convex 凸函数 可以通过梯度下降法来找到全局最小值
 /penalize/ 惩罚
+J(\theta) = 1 / m \sum_{i = 1}^{m}Cost(h_{\theta}(x^{(i)}), y^{i})
+** Simplified Cost Function and Gradient Descent
++ simultaneously update all \theta_{j}
+
+/partial derivative/  偏微分
+** Advanced optimization
+要算出 J(\theta), \delta / \delta_{j} J(\theta)
++ 最適化方法:
+  + Gradient descent
+  + Conjugate gradient 共轭梯度法
+  + BFGS 变尺度法
+  + L-BFGS 限制变尺度法
+
++ Advantages: 
+  + No need to manually pick \alpha 
+  + Often faster than gradient descent
++ Disadvangates
+  + More complex
+** Multiclass Classification
++ One-vs-all
+Train a logistic regression classifier h_{\theta}^{i}(x) for each class i to predict the probability that y = i
+
+On a new input x, to make a prediction, pick thr class i that maximizes \max_{i}h_{\theta}^{i}(x)
+
+* Overfitting
+** Problem of Overfitting
++ Underfitting -> High bias
++ Overfitting -> Hight variance 
+变量太多
+Overfitting: If we have too many features , the learned hypothesis may fit the training set very well , but fail to generalize to new examples.
+学习误差变得很小的同时，泛化误差变得很大。/Generalization error/
+
++ 解决过拟合问题
+因为特征向量太多
+  + Reduce number of features
+    + manually select which features to keep
+    + Model selection algorithm
+  + Regularization 正则化
+  + keep all the features but reduece magnitude / values of parameters \theta_{j}
+  + Works well when we have a lot of features, each of which contributes a bit to predicting y
+
+如果每一个变量都对预测结果有少量影响，则优先考虑正则化
+** Cost function
+minimize 无关项的系数\theta
+
+\min_{\theta} 1/2m \Sum_{i = 1}^{m}(h_{\theta}(x^{(i)} - y^(i)))^{2}
++ 惩罚较大的\theta
+*** Regularization
+small values for parameters \theta_{0}, \theta_{1},...\theta_{n}
+  + "Simpler" hypothesis
+  + Less prone to overfitting /smooth/
++ Modify Cost function
+  J(\theta) = 1/ (2m) [\Sum_{i = 1}^{m}(h_{\theta}(x^{(i)}-y^{(i)}))^{2} + \lambda \Sum_{i = 1}^{n}\theta_{j}^{2}]
+
++ regularization parameter 
++ \lambda 
+
