@@ -1,0 +1,7 @@
+** Non-linear-Hypotheses
+当特征量很大的时候，对导致相应项的parameter也很大
++ 需要一个非线性分类器
++ 当输入维度很大的时候也没有问题
+** Neural Networks
++ Origins: mimic the brain
++ popularity diminished in late 90s
