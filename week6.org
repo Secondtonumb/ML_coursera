@@ -1,0 +1,55 @@
+* Evaluating a learning algorithm
+** Deciding What to tyr next
+** Evaluativing a Hypothesis
+Test Error 1/m_{test} * \sum_{i = 1} ^{m_{test}}err(h_{\Theta}(x_{test}^{(1)}, y_{test}^{(i)}))
+** Model Selection ansd Train/Validation/Test Sets
++ training set 60%
++ cross validation set 20%
++ test set 20%
+** Learning Curves
++ 随着训练样本增加，平均训练误差因为数据量增加而增加
++ 然而相应的，J_{CV}会相应减少，但是不会小于训练样本误差(由于数量的关系)
++ If a learning algorithm is suffering from high bias, getting more training data will not by itself help much
++ If a learning algorithm is suffering from high variance, gerring more training data is likely to help
+** Deciding What to No Next Revisited
++ When unacceptably large errors in prediction
+  + Get more training examples -> fixed high variance
+  + Try smaller set of features -> fixed high variance
+  + Try getting additianal features -> fixed high bias
+  + Try adding polynomial features -> fixed high bias 
+  + Try decreasing \lambda -> fixed high bias
+  + Try decreasing \lambda -> fixed high variance
++ Small neural network 
+  + Computationally cheaper 
++ Large neural network
+  + more parameters; more prone to overfitting
+  + Use regularization(\lambda) to address overfitting
+* Building a Spam Classifier
+** Proritizaing What to works On
+Supervised Learning
++ x = features of email
+  - 先建立一个字典
+  - 建立一个特征向量
+  - In practice,take most frequnently occurring n words(10000 to 50000) in traing set, rather than manually pick 100 words
+  - Develop sophisticated features based on email routing information(from email header)
+  - Develop sophisticated features for message body, e.g. should "discount" and "discounts" be treated as the same word? How about "deal" and Dealer? Features about punctuation?
+  - Develop sophisticated algorithm to detect misspelling (m0rtgage)
+** Error analysis 
++ Recommended approach
+  + Start with a simple algorithm that you can implement quickly.Implement it and test it on your cross-validation data.
+  + Plot learning curves to decide if more data, more features, etc. are likely to help
+  + Error analysis: Manually examine the examples(in cross calidation set) that your algorithm made errors on. See if you spot any systematic trend in in what type of examples it is making errors on
+** Error Metrics for Skewed Classes
+当一个训练集中的不同类型的样本的数量相差很大时，我们称它为偏斜类。
+我们希望有一个不同的评估度量值
++ Precision/ Recall 查准率/召回率
+  + Precision: Of all patients where we predicted y = 1, what fraction actually has cancer
+True pos/ (true pos + false pos)
+  + Recall: Of all patients that actually have cancer, what fraction did we correctly detect as having cancer
+True pos/ (true pos + false negative)
++ Higher precision, Lower recall -> Predict y=1 only if very confident
++ Higher recall -> avoid missing too many risk(avoid false negetives)
+TRADE OFF
+评价方法
++ F1Score = 2 *P * R / (P + R)
+考虑一部分Precision 和 Recall 的平均值
