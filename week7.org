@@ -1,0 +1,36 @@
+* Large Margin Classification
+** optimization Objective
+** Support Vector Machine 
++ If y = 1, we want \theta^{T}x >= 1(not just >=0) 
++ If y = 0, we want \theta^{T}x <= -1(not just < 0)
+不仅仅是大于小于0，
+要求更加高
+当参数C不是很大的时候，他可以忽略掉一些异常点的影响
+* Kernels
+定义新的特征项，就是加函数
+Given x, compute new feature depending on proximity to landmarks
+/Gaussion Kernels/
++ k(x, l^{(i)})
+
+** Kernels and similarity
+f1 = similarity(x, l^{(1)}) = exp(- ||x - l^{(1)}||^{2} / 2\sigma^{2})
+
++ if x \approx l^{(1)}
+  + f1 \approx exp(0) = 1
++ if x is far from l^{1}
+  + f1 = exp(\inf) = 0
+通过减小\sigma^{2} 特征值变化的将会很快，而反之变化慢
+目的是用于训练非常复杂的判断边界的方法
+\theta^{T}\theta -> \thera^{T}M\theta
+从而可以适应超大的训练集
+
+** SVM parameters
+*** C = (1 /\lambda) 
++ Large C: Lower bias, high variance -> 意味着不使用正则化
++ Small C: Higher bias, low variance
+*** \sigma^{2}
++ Large \sigma^{x}: Feature f_{i} vary more smotthly 
+  + Higher bias, lower variance
+* Using An SVM
++ No kernel ("linear kernel")
+Predict "y = 1" if = \theta^{T}x >= 0
