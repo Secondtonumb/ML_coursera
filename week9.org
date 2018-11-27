@@ -1,0 +1,46 @@
+* Predicting Movie Ratings
+** Problem Formulation
+** Content Based Recommendation
+| movie                | Alice(1) | Bob(2) | Carol(3) | Dave(4) | x1(romance) | x2(action) |
+| Love at last         |        5 |      5 |        0 |       0 |         0.9 |          0 |
+| Romance forever      |        5 |      ? |        ? |       0 |         1.0 |       0.01 |
+| Cute puppies of love |        ? |      4 |        0 |       ? |        0.99 |          0 |
+| Nonstop car chases   |        0 |      0 |        5 |       4 |         0.1 |        1.0 |
+| Swords vs. karate    |        0 |      0 |        5 |       ? |           0 |        0.9 |
+
++ For each user j , learn a parameter \theta^{(j)} \in R^{3}. Predict user j as rating movie i with (\theta^{(j)})^{T} x^{(i)} stars
+*** Problem forlulation
++ r(i, j) = 1 if user j has rated movie i (0 otherwise)
+y^{(i, j)} = rating by usri j on moive (if defined)
+
+\theta^{(j)} = parameter vector for user j
+x^{(i)} = feature vector for movie i
+
+For user j, movie i, predicted rating: (\theta^(j))^{T}(x^{(i)}
+m(j) = no.of moives rated by user j
+To learn \theta^{(j)} -> 公式 求最小项
+
+
++ L-BFGS(Limited-memory Broyden-Fletcher-Goldfarb-Shanno Algorithm)
+
++ 实际上是线性回归的一种变体
+基于内容的推荐
+* Collaborative Filtering 协同过滤
+** Collaborative Filtering
+可以自行学习所要使用的特征
++ 给出电影的平均评分 + 电影的特征量,预测每个人的电影喜好
++ 给出每个人的喜好,预测电影评分 
+\theta -> x -> \theta -> x  -> 收敛 
+** Collaborative Filtering Algorithm
+
++ Initialize x .. to small random values
+This serves as symmetry breaking(similar to the random initialization of a neural network's parameters) and ensures the algorithm learns features x^{(1)}... that are different from each other.
++ Minimize J using gradient descent or anadvanced optimization algorithm.
++ For a user with parameters \theta and a movie with (learned) feature x, predict a star rating of \theta^{T}x
+** Low Rank Matrix Factorization
++ How to find moives j related to movie i?
+距离短
+** Mean Normalization 均值归一化
+解决不评分的问题 -> 不评分的预测结果是平均得分
+
+而不是最低分
