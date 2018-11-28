@@ -18,3 +18,13 @@
 + 看起来是以某个比较随机，迂回的路径朝着全局最小值逼近
 + 随机梯度下降是在某个靠近全局最小值的区域内徘徊
 + 外层循环 只需要1-10次?
+** Mini-batch gradient descent
++ Batch gradient descent: Use all m examples in each iteration
++ Stochastic gradient descent: Use 1 examples in each iteration
++ Mini-batch gradient descent: Use n examples in each iteration
+*** Vectorization
+注意考虑batchsize的大小，有时候可能回比随机梯度下降还要快。
+** stochastic Gradient Descent COnvergence 收敛性
+cost(\theta, (x^{(i)}, y^{(i)})) =  1 / 2 (h_{\theta}(x^{(i)} - y^{(i)}))^{2}
++ During learning, compute cost befor updating \thata using (x^{()}, y^{(i)})
++ 即可以用来检验算法是否正确，也可以用来调整学习率
