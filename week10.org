@@ -28,3 +28,24 @@
 cost(\theta, (x^{(i)}, y^{(i)})) =  1 / 2 (h_{\theta}(x^{(i)} - y^{(i)}))^{2}
 + During learning, compute cost befor updating \thata using (x^{()}, y^{(i)})
 + 即可以用来检验算法是否正确，也可以用来调整学习率
+* Advanced Topics
+** Online Learning 
++ 如果我们找到了这样的一个Feature x capture properties of user, of origin/destination and asking price. We want to learn to optimize price
++ Get(x, y) corresponding to user.
++ Updata \theta using (x, y)
++ 放弃了固有数据集的概念
++ 也可以根据用户偏好进行调试
++ predict CTR 预测点击率 click-through rate
++ Some of the advantages of using an online learning algorithm are:
++ It can adapt to changing user tastes
++ It allows us to learn from a continuous stream of data, since we use each example once then no longer need to process it again
+** Map Reduce and Data Parallelism
++ Map reduce 映射约减
++ 有的人认为Map reduce 方法和梯度下降法同等重要甚至更加重要。能够处理更大规模的问题
++ 将训练集分为几个子集
++ 类似并行处理
++ Map-reduce and summation over the training set
+  + Many learning algorithm can be expressed as computing sums of functions over the training set
+
++ Multi-core machines
+/open-source implementation/
