@@ -1,9 +1,0 @@
-* Photo OCR
-** Problem Description and Pipeline
-人工数据合成 /artificial data synthesis/
-+ Text detection
-+ Character segmentation
-+ Character classification
-还有拼写矫正等功能C1eaning -> Cleaning
-** 机器学习流水线
-Image -> Text detection -> Character segmenatation -> Character recognition
