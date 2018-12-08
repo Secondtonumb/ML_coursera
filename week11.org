@@ -1,0 +1,34 @@
+* Photo OCR
+** Problem Description and Pipeline
+人工数据合成 /artificial data synthesis/
++ Text detection
++ Character segmentation
++ Character classification
+还有拼写矫正等功能C1eaning -> Cleaning
+** 机器学习流水线
+Image -> Text detection -> Character segmenatation -> Character recognition
+* Sliding Windows 滑动窗
++ Text detection
++ Pedestrain detection
++ Spervised learning for pedestrain detection
+1d Sliding window for character segmentation
+使用滑动窗来进行文字检测
+/expantion 展开器/
+*** Photo OCR pipeline
++ Text detection 文本检出
++ Character segmantation 字符分析
++ Character classification 字符鉴别
+* Getting Lots of Data and Artificial Data 人工数据合成
+** 白手起家 
+** 扩充数据集
+** Speech recognition
++ Original audio -> add noise
+** Discusstion on getting more data
++ Make sure you have a low bias classifier before expending the effort.(Plot learning curves.) \
+E.g. keep increasing the number of features/ numver of hidden untits in neural network untill you have a low bias classifier
++ How much work would it be to get 10x as much data as we currently have
+  + ARtificial data synthesi
+  + Collect/label it yourself ->　算算到底有没有意义
+　+ "Crowd source" (E.g. Anazon Mechanical Turk)
+* Ceiling Analysis: What Part of the Pipeline to Work on Next 上限分析
+时间十分重要,要决定好下一步到底做什么
